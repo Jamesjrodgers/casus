@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<h1 class="text-center">selecteer het medicijn</h1>
+<form class="form1 container center_div" th:action="@{/index/recept}" method="post">
+    <div class="form-group">
+        <label for="BSN">BSN Patient:</label>
+        <input type="text" class="form-control" id="BSN" placeholder="BSN patient" name="BSN">
+
+        <label for="voorschrijf">voorschrijfdatum:</label>
+        <input type="date" class="form-control" id="voorschrijf" placeholder="Voorschrijfdatum" name="voorschrijfDatum">
+
+        <label for="einddatum">Einddatum:</label>
+        <input type="date" class="form-control" id="einddatum" placeholder="einddatum" name="eindDatum">
+    </div>
+    <div class="form-group">
+        <label for="aflever">Aflevermethode:</label>
+        <select class="form-control" id="aflever" name="afleverMethode">
+            <option>Afhalen bij apotheek</option>
+            <option>Thuisbezorgen bij patient</option>
+        </select>
+        <label for="medicijnkeuze">Medicijn keuze:</label>
+        <select class="form-control" id="medicijnkeuze" name="naam">
+            <option>Paracetamol</option>
+            <option>Broomhexine</option>
+            <option>Chlooramfenicol</option>
+        </select>
+        <label for="vorm">Vorm:</label>
+        <select class="form-control" id="vorm" name="type">
+            <option>Tablet</option>
+            <option>Drank</option>
+            <option>Poeder</option>
+        </select>
+        <label for="aantal">aantal:</label>
+        <input type="text" class="form-control" id="aantal" placeholder="Aantal" name="hoeveelheid">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Voorschrift:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="voorschrift"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" style="float: right" ;>Verstuur het recept</button>
+</form>
+</body>
+</html>
